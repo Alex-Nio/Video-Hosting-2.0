@@ -1,30 +1,35 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div class="full-wrapper">
+    <header>
+      <nav class="nav">
+        <router-link class="nav-item" to="/">На Главную</router-link>
+      </nav>
+    </header>
+    <main class="main">
+      <router-view />
+    </main>
+  </div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@import "./assets/scss/imports.scss";
+header {
+  height: 80px;
 }
 
-nav {
-  padding: 30px;
+.main {
+  margin: 45px 0 420px 0;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.nav {
+  @include fdrjs_aic;
+  width: 100%;
+  padding: 20px 0;
+  height: 80px;
+}
+.nav-item {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 10px 20px;
 }
 </style>
